@@ -4,7 +4,7 @@ A command-line flag parsing library.
 ## How to install
 ```toml
 [dependencies]
-window = { git = "https://github.com/Slazaa/Rust-Flag" }
+flag = { git = "https://github.com/Slazaa/Rust-Flag" }
 ```
 
 ## Examples
