@@ -1,7 +1,7 @@
 use std::env;
 use std::str::FromStr;
 
-/// A structure for handling flags
+/// A structure for handling flags.
 /// 
 /// # Examples
 /// ```
@@ -22,7 +22,7 @@ pub struct FlagHandler {
 }
 
 impl FlagHandler {
-	/// Create a new `FlagHandler`
+	/// Create a new `FlagHandler`.
 	/// 
 	/// # Examples
 	/// ```
@@ -38,12 +38,12 @@ impl FlagHandler {
 		}
 	}
 
-	/// Find the flag in the args and return its index
+	/// Find the flag in the args and return its index.
 	fn find(&self, name: &str) -> Option<usize> {
 		self.args.iter().position(|x| x == &format!("-{}", name))
 	}
 
-	/// Returns true if the flag is in args
+	/// Returns true if the flag is in args.
 	/// 
 	/// # Examples
 	/// ```
@@ -62,7 +62,7 @@ impl FlagHandler {
 		false
 	}
 	
-	/// Returns the next value after the flag, else return `value`
+	/// Returns the next value after the flag, else return `value`.
 	/// 
 	/// # Examples
 	/// ```
