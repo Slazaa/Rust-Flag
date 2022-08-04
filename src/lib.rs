@@ -62,7 +62,7 @@ impl FlagHandler {
 		false
 	}
 	
-	/// Returns the next value after the flag, else return `value`.
+	/// Returns the next value after the flag, else return the given value.
 	/// 
 	/// # Examples
 	/// ```
