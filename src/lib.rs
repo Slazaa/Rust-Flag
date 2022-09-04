@@ -92,4 +92,29 @@ impl FlagHandler {
 			Err(_) => return value
 		}
 	}
+
+	pub fn parse_vec<T>(&self, name: &str, value: Vec<T>, description: &str) -> Vec<T>
+	where
+		T: FromStr
+	{
+		let mut str_vec = self.parse::<String>(name, "".to_owned(), description);
+
+		if str_vec.is_empty() || str_vec.chars().nth(0).unwrap() != '[' || str_vec.chars().last().unwrap() != ']' {
+			return value;
+		}
+
+		str_vec.remove(0);
+		str_vec.pop();
+
+		let mut res = Vec::new();
+
+		for elem in str_vec.split(',') {
+			res.push(match elem.parse::<T>() {
+				Ok(x) => x,
+				Err(_) => return value
+			});
+		}
+
+		res
+	}
 }
