@@ -62,7 +62,7 @@ impl FlagHandler {
 		false
 	}
 	
-	/// Returns the next value after the flag, else return the given value.
+	/// Returns the value after the flag, else return the given value.
 	/// 
 	/// # Examples
 	/// ```
@@ -93,6 +93,17 @@ impl FlagHandler {
 		}
 	}
 
+	/// Returns the vector after the flag, else return the given vector.
+	/// 
+	/// # Examples
+	/// ```
+	/// use flag::FlagHandler;
+	/// 
+	/// fn main() {
+	/// 	let flag_handler = FlagHandler::new();
+	/// 	let numbers = flag_handler.parse_vec::<u32>("num", vec![1, 2, 3], "List of numbers");
+	/// }
+	/// ```
 	pub fn parse_vec<T>(&self, name: &str, value: Vec<T>, description: &str) -> Vec<T>
 	where
 		T: FromStr
